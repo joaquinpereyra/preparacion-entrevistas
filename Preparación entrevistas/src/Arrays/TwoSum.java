@@ -17,11 +17,9 @@ public class TwoSum {
         {
             if(neededIndex.get(nums[i]) != null)
             {
-                int index2 = neededIndex.get(nums[i]);
-                return int[index2,i];/* 
                 result[0] = neededIndex.get(nums[i]);
                 result[1] = i;
-                break;*/
+                break;
             }
             else
             {
@@ -34,7 +32,7 @@ public class TwoSum {
     }
     
     public static void main(String[] args) {
-        int[] nums = {2,7,11,15};
+        int[] nums = {2,11,7,15};
         int[] result = twoSum(nums,9);
         System.out.println(result[0]+"   "  + result[1]);
     }
