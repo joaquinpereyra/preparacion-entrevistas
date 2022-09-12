@@ -49,41 +49,41 @@ public class Problema2 {
 
     private static boolean comerIzquierda(ArrayList<String> gatosRatones, int pos, int dist) 
     {
-        int left = pos - dist;
-        while(left < pos)
+        int izq = pos - dist;
+        while(izq < pos)
         {
             try{
-                String elem = gatosRatones.get(left);
+                String elem = gatosRatones.get(izq);
                 if(elem.equals(raton))
                 {
-                    gatosRatones.set(left, comido);
+                    gatosRatones.set(izq, comido);
                     return true;
                 }
             }
             catch(IndexOutOfBoundsException e){
-                System.out.println("Elemento fuera de rango, elemento: "+ pos + " indice izquierdo: " + left);
+                System.out.println("Elemento fuera de rango, elemento: "+ pos + " indice izquierdo: " + izq);
             }
-            left++;
+            izq++;
         }
         return false;
     }
 
     private static void comerDerecha(ArrayList<String> gatosRatones, int pos, int dist) 
     {
-        int right = pos + dist;
-        while(pos < right)
+        int der = pos + dist;
+        while(pos < der)
         {
             try{
-                String elem = gatosRatones.get(right);
+                String elem = gatosRatones.get(der);
                 if(elem.equals(raton))
                 {
-                    gatosRatones.set(right, comido);
+                    gatosRatones.set(der, comido);
                 }
             }
             catch(IndexOutOfBoundsException e){
-                System.out.println("Elemento fuera de rango, elemento: "+ pos + " indice derecho: " + right);
+                System.out.println("Elemento fuera de rango, elemento: "+ pos + " indice derecho: " + der);
             }
-            right--;
+            der--;
         }
     }
 
