@@ -17,6 +17,19 @@ public class Problema2 {
 
         System.out.println("Array final: " + gatosRatones);
         
+        int ratonesVivos = 0;
+        int ratonesComidos = 0;
+        for(String s : gatosRatones)
+        {
+            if(s.equals(raton)){
+                ratonesVivos +=1;
+            }
+            if(s.equals(comido)){
+                ratonesComidos +=1;
+            }
+        }
+        System.out.println("Ratones vivos: " + ratonesVivos);
+        System.out.println("Ratones comidos: " + ratonesComidos);
 
     }
     public static void comer(ArrayList<String> gatosRatones, int dist)
