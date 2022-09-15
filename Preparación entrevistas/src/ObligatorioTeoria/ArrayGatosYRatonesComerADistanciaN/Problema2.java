@@ -98,7 +98,7 @@ public class Problema2 {
         gatosRatones.add(gato);
         gatosRatones.add(raton);
         gatosRatones.add(gato);
-      //  gatosRatones.add(gato);
+        gatosRatones.add(gato);
         gatosRatones.add(raton);
     
 

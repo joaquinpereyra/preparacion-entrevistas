@@ -28,13 +28,12 @@ public class Problema1 {
         //optimiza el tiempo
         obtenerMenorCostoHoras(grafo, mvd);
         //optimiza tiempo y costo haciendo que sea costo por hora
-        obtenerMenorCostoPorTiempo(grafo,mvd);
+       // obtenerMenorCostoPorTiempo(grafo,mvd);
 
     }
    
     public static void obtenerMenorCosto(HashMap<String, Nodo> grafo, Nodo mvd)
     {
-
         ArrayList<Object> caminoOptimo = new ArrayList<>();
         caminoOptimo.add(Integer.MAX_VALUE);
         
@@ -43,8 +42,10 @@ public class Problema1 {
             ArrayList<Object> camino = new ArrayList<>();
             camino.add(0);
             camino = obtenerMenorCostoDolares(grafo, ver);
+            
             if((int)camino.get(0) < (int)caminoOptimo.get(0))
             {
+                
                 caminoOptimo.add(ver.getOrigen());
                 caminoOptimo = camino;
             }
@@ -61,7 +62,7 @@ public class Problema1 {
     {
         ArrayList<Object> arrayOptimo = new ArrayList<>();
         Nodo nodoActual = grafo.get(verticeSelec.getDestino());
-        if(nodoActual.getNodosAdyacentes().isEmpty() )
+        if(nodoActual.getNodosAdyacentes().isEmpty())
         {
             arrayOptimo.add(verticeSelec.getCostoDolares());
             arrayOptimo.add(nodoActual.getNombre());
