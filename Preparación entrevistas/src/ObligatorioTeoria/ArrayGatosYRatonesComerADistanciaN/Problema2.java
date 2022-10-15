@@ -8,7 +8,7 @@ public class Problema2 {
     private final static String comido = "C";
 
     public static void main(String[] args) {
-        int distancia = 3;
+        int distancia = 2;
         ArrayList<String> gatosRatones = obtenerArray();
 
         System.out.println("Array Inicial: "+ gatosRatones);
@@ -46,6 +46,48 @@ public class Problema2 {
             }
         }
     }
+    /*
+     
+
+        for(int pos = 0; pos < gatosRatones.size(); pos++)                              
+        {
+            if(gatosRatones.get(pos).equals(gato))
+            {
+                if(!comerIzquierda(gatosRatones,pos,dist))
+                {
+                    comerDerecha(gatosRatones, pos, dist);
+                }
+            }
+        }
+// comer izquierda
+        int izq = pos - dist;
+        while(izq < pos)
+        {
+            String elem = gatosRatones.get(izq);
+            if(elem.equals(raton))
+            {
+                gatosRatones.set(izq, comido);
+                return true;
+            }
+            izq++;
+        }
+        return false;
+
+// comer derecha
+        int der = pos + dist;
+        while(pos < der)
+        {
+            String elem = gatosRatones.get(der);
+            if(elem.equals(raton))
+            {
+                gatosRatones.set(der, comido);
+                return true;
+            }
+            der--;
+        }
+        return false;
+
+     */
 
     private static boolean comerIzquierda(ArrayList<String> gatosRatones, int pos, int dist) 
     {
@@ -61,14 +103,13 @@ public class Problema2 {
                 }
             }
             catch(IndexOutOfBoundsException e){
-                System.out.println("Elemento fuera de rango, elemento: "+ pos + " indice izquierdo: " + izq);
             }
             izq++;
         }
         return false;
     }
 
-    private static void comerDerecha(ArrayList<String> gatosRatones, int pos, int dist) 
+    private static boolean comerDerecha(ArrayList<String> gatosRatones, int pos, int dist) 
     {
         int der = pos + dist;
         while(pos < der)
@@ -78,30 +119,29 @@ public class Problema2 {
                 if(elem.equals(raton))
                 {
                     gatosRatones.set(der, comido);
+                    return true;
                 }
             }
             catch(IndexOutOfBoundsException e){
-                System.out.println("Elemento fuera de rango, elemento: "+ pos + " indice derecho: " + der);
             }
             der--;
         }
+        return false;
     }
 
     public static ArrayList<String> obtenerArray()
     {
         ArrayList<String> gatosRatones = new ArrayList<>();
         gatosRatones.add(raton);
-        gatosRatones.add(raton);
+      //  gatosRatones.add(raton);
         gatosRatones.add(gato);
         gatosRatones.add(raton);
-        gatosRatones.add(gato);
-        gatosRatones.add(gato);
         gatosRatones.add(raton);
         gatosRatones.add(gato);
         gatosRatones.add(gato);
-        gatosRatones.add(raton);
-    
-
+    //    gatosRatones.add(gato);
+     //   gatosRatones.add(gato);
+      //  gatosRatones.add(raton);
 
         return gatosRatones;
     }

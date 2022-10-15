@@ -6,7 +6,7 @@ public class Vertice {
     private int costoDolares;
     private int duracionHoras;
     
-    public Vertice(String origen, String destino, int costoDolares, int duracionHoras)
+    public Vertice(String origen, String destino, Integer costoDolares, Integer duracionHoras)
     {
         this.origen = origen;
         this.destino = destino;

@@ -28,7 +28,7 @@ public class Problema1 {
         //optimiza el tiempo
         obtenerMenorCostoHoras(grafo, mvd);
         //optimiza tiempo y costo haciendo que sea costo por hora
-       // obtenerMenorCostoPorTiempo(grafo,mvd);
+        obtenerMenorCostoPorTiempo(grafo,mvd);
 
     }
    
@@ -54,7 +54,10 @@ public class Problema1 {
         System.out.println(mvd.getNombre() + " --> ");
         for(int i = caminoOptimo.size()-1; i > 0 ; i--)
         {
+            if(i != 1)
             System.out.println(caminoOptimo.get(i).toString() + " --> ");
+            else
+            System.out.println(caminoOptimo.get(i).toString());
         }
     }
 
@@ -103,7 +106,10 @@ public class Problema1 {
         System.out.println(mvd.getNombre() + " --> ");
         for(int i = caminoOptimo.size()-1; i > 0 ; i--)
         {
+            if(i != 1)
             System.out.println(caminoOptimo.get(i).toString() + " --> ");
+            else
+            System.out.println(caminoOptimo.get(i).toString());
         }
 
     }
@@ -142,7 +148,7 @@ public class Problema1 {
             ArrayList<Object> camino = new ArrayList<>();
             camino.add(0.0);
             camino = obtenerMenorCostoTiempo(grafo, ver);
-            if((Float) camino.get(0) <(Float) caminoOptimo.get(0))
+            if( Float.parseFloat(camino.get(0).toString()) < Float.parseFloat(caminoOptimo.get(0).toString()))
             {
                 caminoOptimo.add(ver.getOrigen());
                 caminoOptimo = camino;
@@ -152,7 +158,10 @@ public class Problema1 {
         System.out.println(mvd.getNombre() + " --> ");
         for(int i = caminoOptimo.size()-1; i > 0 ; i--)
         {
+            if(i != 1)
             System.out.println(caminoOptimo.get(i).toString() + " --> ");
+            else
+            System.out.println(caminoOptimo.get(i).toString());
         }
     }
 
@@ -172,7 +181,7 @@ public class Problema1 {
                 ArrayList<Object> arrayTemp = obtenerMenorCostoTiempo(grafo, ver);
                 arrayTemp.set(0, (float)arrayTemp.get(0) +(float) (verticeSelec.getCostoDolares()/verticeSelec.getDuracionHoras()));
                 arrayTemp.add(ver.getOrigen());
-                if((float) arrayTemp.get(0) <  (float)arrayOptimo.get(0))
+                if(Float.parseFloat(arrayTemp.get(0).toString()) <  Float.parseFloat(arrayOptimo.get(0).toString()))
                 {
                     arrayOptimo = arrayTemp;
                 }
